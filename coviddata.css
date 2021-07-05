@@ -1,0 +1,126 @@
+body {
+  margin: 0px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+}
+
+h2, h3 {
+  margin: 0;
+}
+
+#header{
+  min-height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#site-title{
+  margin: 2vh;
+}
+
+#sorter{
+  margin: 0 10vw 0 5vw;
+}
+
+.panels-cntr{
+  margin: 20px 0 75px 0;
+}
+
+.prov-cntr {
+  display: flex;
+  align-items: center;
+  padding: 1%;
+  border: solid 2px;
+  border-radius: 4vh;
+  margin: 2vh;
+}
+
+.prov-img-cntr{
+  min-width: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.prov-img {
+  height: 35vh;
+  padding: 0.5%;
+}
+
+.prov-title{
+  padding-right: 5vw;
+}
+
+.flag{
+  max-height : 1.5rem;
+  padding: 10px;
+}
+
+.prov-header{
+  display: grid;
+  grid-template-columns: minmax(min-content, 8%) minmax(min-content, 50%);
+  align-items: center;
+  margin: 2vh 0vh 2vh 0vh;
+}
+
+.prov-stats{
+  display: grid;
+  justify-content: center;
+  width: 60vw;
+  grid-template-columns: minmax(min-content,20%) minmax(min-content,30%) minmax(min-content, 30%);
+  grid-template-rows: repeat(6, 5vh);
+  margin: 0 5vw 0 5vw;
+  background: repeating-linear-gradient(#dddddd 0 5vh, #fbfbfb 5vh 10vh);
+  border-radius: 10px;
+  border: 1px solid black;
+}
+
+.active-cases{
+  grid-column-start: 2;
+}
+
+.updated{
+  grid-column-start: 2;
+}
+
+.grid-header {
+  text-align: end;
+  margin: 0 1vw 0 1vw
+}
+
+.total {
+  grid-column-start: 3;
+} 
+
+.daily {
+  grid-column-start: 2;
+}
+
+.data-title{
+  font-size: 25px;
+  margin-right: 3vw;
+}
+
+.data-num{
+  font-family: "Andalé Mono";
+  margin: 0 1vw 0 1vw;
+  display: inline;
+  text-align: end;
+}
+
+.data-text{
+  font-size: 15px;
+  display: inline;
+}
+
+.red {
+  font-size: 4vh;
+  font-weight: bold;
+  color: red;
+  margin: 0;
+}
+
+.green{
+  font-weight: bold;
+  color: green;
+}
