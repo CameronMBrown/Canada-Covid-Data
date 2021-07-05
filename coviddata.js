@@ -651,6 +651,8 @@ window.onload = e => {
           yukon
         ];
 
+        console.log(alphabetical.length)
+
         alphabetical.forEach((prov) => {
           panels.innerHTML += prov.HTML;
         })
@@ -658,6 +660,7 @@ window.onload = e => {
 
       function activeCases(){
         provinces.sort((a, b) => (a.data.active_cases > b.data.active_cases) ? -1 : 1)
+        console.log(provinces.length);
         provinces.forEach((prov) => panels.innerHTML += prov.HTML);
       }
 
@@ -713,18 +716,40 @@ window.onload = e => {
       const sorter = document.getElementById("sort");
       sorter.addEventListener('change', () => {
 
-        panels.innerHTML ="";
+        panels.innerHTML = "";
+        console.log(sorter.value);
+
         switch (sorter.value){
-          case "alphabetical": alphaSort();
-          case "active cases": activeCases();
-          case "cases": cases();
-          case "recovered": recovered();
-          case "deaths": deaths();
-          case "vaccination": vaccination();
-          case "daily cases": dailyCases();
-          case "daily recovered": dailyRecovered();
-          case "daily deaths": dailyDeaths();
-          case "daily vaccinations": dailyVaccinations();
+          case "1": 
+            alphaSort();
+            break;
+          case "2": 
+            activeCases();
+            break;
+          case "3": 
+            cases();
+            break;
+          case "4": 
+            recovered();
+            break;
+          case "5": 
+            deaths();
+            break;
+          case "6": 
+            vaccination();
+            break;
+          case "7": 
+            dailyCases();
+            break;
+          case "8": 
+            dailyRecovered();
+            break;
+          case "9": 
+            dailyDeaths();
+            break;
+          case "10": 
+            dailyVaccinations();
+            break;
         }
 
       });
