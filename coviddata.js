@@ -40,7 +40,7 @@ window.onload = e => {
       const yk = opencovidAPI.summary[13];
 
       // load the rest of DOM elements after data has been loaded to avoid reference errors.
-
+      // get container for provence panels
       const panels = document.getElementById("panels");
 
       const alberta = {
@@ -635,6 +635,9 @@ window.onload = e => {
       ];
 
       function alphaSort(){
+        // arrange the provence panels in alphabetical order
+        // default sorting method
+        // alphabetical order will never change, this can be hardcoded.
         let alphabetical = [
           alberta, 
           britishColumbia, 
@@ -651,35 +654,36 @@ window.onload = e => {
           yukon
         ];
 
-        console.log(alphabetical.length)
-
-        alphabetical.forEach((prov) => {
-          panels.innerHTML += prov.HTML;
-        })
+        // append provence panels in alphabetical order
+        alphabetical.forEach((prov) => panels.innerHTML += prov.HTML);
       }
 
       function activeCases(){
-        provinces.sort((a, b) => (a.data.active_cases > b.data.active_cases) ? -1 : 1)
-        console.log(provinces.length);
+        // sort provence panels by number of active cases
+        provinces.sort((a, b) => (a.data.active_cases > b.data.active_cases) ? -1 : 1);
         provinces.forEach((prov) => panels.innerHTML += prov.HTML);
       }
 
       function cases(){
+        // sort provence panels by total number of cases
         provinces.sort((a, b) => (a.data.cumulative_cases > b.data.cumulative_cases) ? -1 : 1)
         provinces.forEach((prov) => panels.innerHTML += prov.HTML);
       }
 
       function recovered(){
+        // sort provence panels by total number of recoveries
         provinces.sort((a, b) => (a.data.cumulative_recovered > b.data.cumulative_recovered) ? -1 : 1)
         provinces.forEach((prov) => panels.innerHTML += prov.HTML);
       }
 
       function deaths(){
+        // sort provence panels by total number of deaths
         provinces.sort((a, b) => (a.data.cumulative_deaths > b.data.cumulative_deaths) ? -1 : 1)
         provinces.forEach((prov) => panels.innerHTML += prov.HTML);
       }
 
       function vaccination(){
+        // sort provence panels by total number of vaccinations
         provinces.sort((a, b) => {
           return ((a.data.cumulative_avaccine + a.data.cumulative_cvaccine + a.data.cumulative_dvaccine) > 
             (b.data.cumulative_avaccine + b.data.cumulative_cvaccine + b.data.cumulative_dvaccine)) ? -1 : 1
@@ -688,21 +692,25 @@ window.onload = e => {
       }
 
       function dailyCases(){
+        // sort provence panels by number of daily cases
         provinces.sort((a, b) => (a.data.cases > b.data.cases) ? -1 : 1)
         provinces.forEach((prov) => panels.innerHTML += prov.HTML);
       }
 
       function dailyRecovered(){
+        // sort provence panels by number of daily recoveries
         provinces.sort((a, b) => (a.data.recovered > b.data.recovered) ? -1 : 1)
         provinces.forEach((prov) => panels.innerHTML += prov.HTML);
       }
 
       function dailyDeaths(){
+        // sort provence panels by number of daily deaths
         provinces.sort((a, b) => (a.data.deaths > b.data.deaths) ? -1 : 1)
         provinces.forEach((prov) => panels.innerHTML += prov.HTML);
       }
 
       function dailyVaccinations(){
+        // sort provence panels by number of daily vaccinations
         provinces.sort((a, b) => {
           return ((a.data.avaccine + a.data.cvaccine + a.data.dvaccine) > 
             (b.data.avaccine + b.data.cvaccine + b.data.dvaccine)) ? -1 : 1
@@ -715,10 +723,10 @@ window.onload = e => {
       
       const sorter = document.getElementById("sort");
       sorter.addEventListener('change', () => {
-
+        // first, remove exsisting provence panels
         panels.innerHTML = "";
-        console.log(sorter.value);
 
+        // sort data based on dropdown selection 
         switch (sorter.value){
           case "1": 
             alphaSort();
