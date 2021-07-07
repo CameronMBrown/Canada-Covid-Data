@@ -25,6 +25,7 @@ window.onload = e => {
   fetch('https://api.opencovid.ca/summary')
     .then(data => data.json())
     .then((opencovidAPI) => {
+      // grab provence data from API response
       const ab = opencovidAPI.summary[0];
       const bc = opencovidAPI.summary[1];
       const mb = opencovidAPI.summary[2];
@@ -43,12 +44,14 @@ window.onload = e => {
       // get container for provence panels
       const panels = document.getElementById("panels");
 
+      // define provence panel HTML, include API data
       const alberta = {
-        HTML: `<div id="alberta" class="prov-cntr">
-        <div class="prov-img-cntr">
-          <img src="img/ab.gif" alt="Alberta" class="prov-img"></img>
-        </div>
-        <div>
+        HTML: 
+        `<div id="alberta" class="prov-cntr">
+          <div class="prov-img-cntr">
+            <img src="img/ab.gif" alt="Alberta" class="prov-img"></img> 
+          </div>
+          <div>
           <div class="prov-header">
             <img src="img/ab-flag.png" alt="Alberta flag" class="flag"></img>
             <h2 class="prov-title">Alberta</h2>
@@ -56,31 +59,24 @@ window.onload = e => {
               <div class="data-num red">${ab.active_cases} </div>active cases ${ab.date}
             </div>
           </div>
-
           <div class="prov-stats">
             <div class="grid-header daily">daily</div>
             <div class="grid-header total">total</div>
-
             <div class="data-title">Cases</div>
             <div class="data-num">${ab.cases}</div>
             <div class="data-num">${ab.cumulative_cases}</div>
-
             <div class="data-title">Recovered</div>
             <div class="data-num">${ab.recovered}</div>
             <div class="data-num">${ab.cumulative_recovered}</div>
-
             <div class="data-title">Deaths</div>
             <div class="data-num">${ab.deaths}</div>
             <div class="data-num">${ab.cumulative_deaths}</div>
-
             <div class="data-title">Testing</div>
             <div class="data-num">${ab.testing}</div>
             <div class="data-num">${ab.cumulative_testing}</div>
-
             <div class="data-title">Vaccination</div>
             <div class="data-num">${ab.avaccine + ab.cvaccine + ab.dvaccine}</div>
             <div class="data-num">${ab.cumulative_avaccine + ab.cumulative_cvaccine + ab.cumulative_dvaccine}</div>
-
           </div>
         </div>
       </div>`,
@@ -88,11 +84,12 @@ window.onload = e => {
       }
 
       const britishColumbia = {
-        HTML:       `<div id="britishcolumbia" class="prov-cntr">
-        <div class="prov-img-cntr">
-          <img src="img/bc.gif" alt="British Columbia" class="prov-img"></img>
-        </div>
-        <div>
+        HTML:       
+        `<div id="britishcolumbia" class="prov-cntr">
+          <div class="prov-img-cntr">
+            <img src="img/bc.gif" alt="British Columbia" class="prov-img"></img>
+          </div>
+          <div>
           <div class="prov-header">
             <img src="img/bc-flag.png" alt="British Columbia flag" class="flag"></img>
             <h2 class="prov-title">British Columbia</h2>
@@ -100,31 +97,24 @@ window.onload = e => {
               <div class="data-num red">${bc.active_cases} </div>active cases ${bc.date}
             </div>
           </div>
-
           <div class="prov-stats">
             <div class="grid-header daily">daily</div>
             <div class="grid-header total">total</div>
-
             <div class="data-title">Cases</div>
             <div class="data-num">${bc.cases}</div>
             <div class="data-num">${bc.cumulative_cases}</div>
-
             <div class="data-title">Recovered</div>
             <div class="data-num">${bc.recovered}</div>
             <div class="data-num">${bc.cumulative_recovered}</div>
-
             <div class="data-title">Deaths</div>
             <div class="data-num">${bc.deaths}</div>
             <div class="data-num">${bc.cumulative_deaths}</div>
-
             <div class="data-title">Testing</div>
             <div class="data-num">${bc.testing}</div>
             <div class="data-num">${bc.cumulative_testing}</div>
-
             <div class="data-title">Vaccination</div>
             <div class="data-num">${bc.avaccine + bc.cvaccine + bc.dvaccine}</div>
             <div class="data-num">${bc.cumulative_avaccine + bc.cumulative_cvaccine + bc.cumulative_dvaccine}</div>
-
           </div>
         </div>
       </div>`,
@@ -132,11 +122,12 @@ window.onload = e => {
       }
 
       const manitoba = {
-        HTML:       `<div id="manitoba" class="prov-cntr">
-        <div class="prov-img-cntr">
-          <img src="img/mb.gif" alt="Manitoba" class="prov-img"></img>
-        </div>
-        <div>
+        HTML:       
+        `<div id="manitoba" class="prov-cntr">
+          <div class="prov-img-cntr">
+            <img src="img/mb.gif" alt="Manitoba" class="prov-img"></img>
+          </div>
+          <div>
           <div class="prov-header">
             <img src="img/mb-flag.png" alt="Manitoba flag" class="flag"></img>
             <h2 class="prov-title">Manitoba</h2>
@@ -144,31 +135,24 @@ window.onload = e => {
               <div class="data-num red">${mb.active_cases} </div>active cases ${mb.date}
             </div>
           </div>
-
           <div class="prov-stats">
             <div class="grid-header daily">daily</div>
             <div class="grid-header total">total</div>
-
             <div class="data-title">Cases</div>
             <div class="data-num">${mb.cases}</div>
             <div class="data-num">${mb.cumulative_cases}</div>
-
             <div class="data-title">Recovered</div>
             <div class="data-num">${mb.recovered}</div>
             <div class="data-num">${mb.cumulative_recovered}</div>
-
             <div class="data-title">Deaths</div>
             <div class="data-num">${mb.deaths}</div>
             <div class="data-num">${mb.cumulative_deaths}</div>
-
             <div class="data-title">Testing</div>
             <div class="data-num">${mb.testing}</div>
             <div class="data-num">${mb.cumulative_testing}</div>
-
             <div class="data-title">Vaccination</div>
             <div class="data-num">${mb.avaccine + mb.cvaccine + mb.dvaccine}</div>
             <div class="data-num">${mb.cumulative_avaccine + mb.cumulative_cvaccine + mb.cumulative_dvaccine}</div>
-
           </div>
         </div>
       </div>`,
@@ -177,11 +161,11 @@ window.onload = e => {
 
       const newBrunswick = {
         HTML:
-              `<div id="newbrunswick" class="prov-cntr">
-        <div class="prov-img-cntr">
-          <img src="img/nb.gif" alt="New Brunswick" class="prov-img"></img>
-        </div>
-        <div>
+        `<div id="newbrunswick" class="prov-cntr">
+          <div class="prov-img-cntr">
+            <img src="img/nb.gif" alt="New Brunswick" class="prov-img"></img>
+          </div>
+          <div>
           <div class="prov-header">
             <img src="img/nb-flag.png" alt="New Brunswick flag" class="flag"></img>
             <h2 class="prov-title">New Brunswick</h2>
@@ -189,31 +173,24 @@ window.onload = e => {
               <div class="data-num red">${nb.active_cases} </div>active cases ${nb.date}
             </div>
           </div>
-
           <div class="prov-stats">
             <div class="grid-header daily">daily</div>
             <div class="grid-header total">total</div>
-
             <div class="data-title">Cases</div>
             <div class="data-num">${nb.cases}</div>
             <div class="data-num">${nb.cumulative_cases}</div>
-
             <div class="data-title">Recovered</div>
             <div class="data-num">${nb.recovered}</div>
             <div class="data-num">${nb.cumulative_recovered}</div>
-
             <div class="data-title">Deaths</div>
             <div class="data-num">${nb.deaths}</div>
             <div class="data-num">${nb.cumulative_deaths}</div>
-
             <div class="data-title">Testing</div>
             <div class="data-num">${nb.testing}</div>
             <div class="data-num">${nb.cumulative_testing}</div>
-
             <div class="data-title">Vaccination</div>
             <div class="data-num">${nb.avaccine + nb.cvaccine + nb.dvaccine}</div>
             <div class="data-num">${nb.cumulative_avaccine + nb.cumulative_cvaccine + nb.cumulative_dvaccine}</div>
-
           </div>
         </div>
       </div>`,
@@ -233,31 +210,24 @@ window.onload = e => {
               <div class="data-num red">${nl.active_cases} </div>active cases ${nl.date}
             </div>
           </div>
-
           <div class="prov-stats">
             <div class="grid-header daily">daily</div>
             <div class="grid-header total">total</div>
-
             <div class="data-title">Cases</div>
             <div class="data-num">${nl.cases}</div>
             <div class="data-num">${nl.cumulative_cases}</div>
-
             <div class="data-title">Recovered</div>
             <div class="data-num">${nl.recovered}</div>
             <div class="data-num">${nl.cumulative_recovered}</div>
-
             <div class="data-title">Deaths</div>
             <div class="data-num">${nl.deaths}</div>
             <div class="data-num">${nl.cumulative_deaths}</div>
-
             <div class="data-title">Testing</div>
             <div class="data-num">${nl.testing}</div>
             <div class="data-num">${nl.cumulative_testing}</div>
-
             <div class="data-title">Vaccination</div>
             <div class="data-num">${nl.avaccine + nl.cvaccine + nl.dvaccine}</div>
             <div class="data-num">${nl.cumulative_avaccine + nl.cumulative_cvaccine + nl.cumulative_dvaccine}</div>
-
           </div>
         </div>
       </div>`,
@@ -265,11 +235,12 @@ window.onload = e => {
       }
 
       const northwestTerritories = {      
-        HTML: `<div id="northwestterritories" class="prov-cntr">
-        <div class="prov-img-cntr">
-          <img src="img/nwt.png" alt="Northwest Territories" class="prov-img"></img>
-        </div>
-        <div>
+        HTML: 
+        `<div id="northwestterritories" class="prov-cntr">
+          <div class="prov-img-cntr">
+            <img src="img/nwt.png" alt="Northwest Territories" class="prov-img"></img>
+          </div>
+          <div>
           <div class="prov-header">
             <img src="img/nwt-flag.png" alt="Northwest Territories flag" class="flag"></img>
             <h2 class="prov-title">Northwest Territories</h2>
@@ -277,31 +248,24 @@ window.onload = e => {
               <div class="data-num red">${nt.active_cases} </div>active cases ${nt.date}
             </div>
           </div>
-
           <div class="prov-stats">
             <div class="grid-header daily">daily</div>
             <div class="grid-header total">total</div>
-
             <div class="data-title">Cases</div>
             <div class="data-num">${nt.cases}</div>
             <div class="data-num">${nt.cumulative_cases}</div>
-
             <div class="data-title">Recovered</div>
             <div class="data-num">${nt.recovered}</div>
             <div class="data-num">${nt.cumulative_recovered}</div>
-
             <div class="data-title">Deaths</div>
             <div class="data-num">${nt.deaths}</div>
             <div class="data-num">${nt.cumulative_deaths}</div>
-
             <div class="data-title">Testing</div>
             <div class="data-num">${nt.testing}</div>
             <div class="data-num">${nt.cumulative_testing}</div>
-
             <div class="data-title">Vaccination</div>
             <div class="data-num">${nt.avaccine + nt.cvaccine + nt.dvaccine}</div>
             <div class="data-num">${nt.cumulative_avaccine + nt.cumulative_cvaccine + nt.cumulative_dvaccine}</div>
-
           </div>
         </div>
       </div>`,
@@ -309,11 +273,12 @@ window.onload = e => {
       }
 
       const novaScotia = {      
-        HTML: `<div id="novascotia" class="prov-cntr">
-        <div class="prov-img-cntr">
-          <img src="img/ns.gif" alt="Nova Scotia" class="prov-img"></img>
-        </div>
-        <div>
+        HTML: 
+        `<div id="novascotia" class="prov-cntr">
+          <div class="prov-img-cntr">
+            <img src="img/ns.gif" alt="Nova Scotia" class="prov-img"></img>
+          </div>
+          <div>
           <div class="prov-header">
             <img src="img/ns-flag.png" alt="Nova Scotia flag" class="flag"></img>
             <h2 class="prov-title">Nova Scotia</h2>
@@ -321,31 +286,24 @@ window.onload = e => {
               <div class="data-num red">${ns.active_cases} </div>active cases ${ns.date}
             </div>
           </div>
-
           <div class="prov-stats">
             <div class="grid-header daily">daily</div>
             <div class="grid-header total">total</div>
-
             <div class="data-title">Cases</div>
             <div class="data-num">${ns.cases}</div>
             <div class="data-num">${ns.cumulative_cases}</div>
-
             <div class="data-title">Recovered</div>
             <div class="data-num">${ns.recovered}</div>
             <div class="data-num">${ns.cumulative_recovered}</div>
-
             <div class="data-title">Deaths</div>
             <div class="data-num">${ns.deaths}</div>
             <div class="data-num">${ns.cumulative_deaths}</div>
-
             <div class="data-title">Testing</div>
             <div class="data-num">${ns.testing}</div>
             <div class="data-num">${ns.cumulative_testing}</div>
-
             <div class="data-title">Vaccination</div>
             <div class="data-num">${ns.avaccine + ns.cvaccine + ns.dvaccine}</div>
             <div class="data-num">${ns.cumulative_avaccine + ns.cumulative_cvaccine + ns.cumulative_dvaccine}</div>
-
           </div>
         </div>
       </div>`,
@@ -365,31 +323,24 @@ window.onload = e => {
               <div class="data-num red">${nv.active_cases} </div>active cases ${nv.date}
             </div>
           </div>
-
           <div class="prov-stats">
             <div class="grid-header daily">daily</div>
             <div class="grid-header total">total</div>
-
             <div class="data-title">Cases</div>
             <div class="data-num">${nv.cases}</div>
             <div class="data-num">${nv.cumulative_cases}</div>
-
             <div class="data-title">Recovered</div>
             <div class="data-num">${nv.recovered}</div>
             <div class="data-num">${nv.cumulative_recovered}</div>
-
             <div class="data-title">Deaths</div>
             <div class="data-num">${nv.deaths}</div>
             <div class="data-num">${nv.cumulative_deaths}</div>
-
             <div class="data-title">Testing</div>
             <div class="data-num">${nv.testing}</div>
             <div class="data-num">${nv.cumulative_testing}</div>
-
             <div class="data-title">Vaccination</div>
             <div class="data-num">${nv.avaccine + nv.cvaccine + nv.dvaccine}</div>
             <div class="data-num">${nv.cumulative_avaccine + nv.cumulative_cvaccine + nv.cumulative_dvaccine}</div>
-
           </div>
         </div>
       </div>`,
@@ -397,11 +348,12 @@ window.onload = e => {
       }
 
       const ontario = {
-        HTML: `<div id="ontario" class="prov-cntr">
-        <div class="prov-img-cntr">
-          <img src="img/ont.gif" alt="ontario" class="prov-img"></img>
-        </div>
-        <div>
+        HTML: 
+        `<div id="ontario" class="prov-cntr">
+          <div class="prov-img-cntr">
+            <img src="img/ont.gif" alt="ontario" class="prov-img"></img>
+          </div>
+          <div>
           <div class="prov-header">
             <img src="img/ontario-flag.png" alt="ontario flag" class="flag"></img>
             <h2 class="prov-title">Ontario</h2>
@@ -409,31 +361,24 @@ window.onload = e => {
               <div class="data-num red">${on.active_cases} </div>active cases ${on.date}
             </div>
           </div>
-
           <div class="prov-stats">
             <div class="grid-header daily">daily</div>
             <div class="grid-header total">total</div>
-
             <div class="data-title">Cases</div>
             <div class="data-num">${on.cases}</div>
             <div class="data-num">${on.cumulative_cases}</div>
-
             <div class="data-title">Recovered</div>
             <div class="data-num">${on.recovered}</div>
             <div class="data-num">${on.cumulative_recovered}</div>
-
             <div class="data-title">Deaths</div>
             <div class="data-num">${on.deaths}</div>
             <div class="data-num">${on.cumulative_deaths}</div>
-
             <div class="data-title">Testing</div>
             <div class="data-num">${on.testing}</div>
             <div class="data-num">${on.cumulative_testing}</div>
-
             <div class="data-title">Vaccination</div>
             <div class="data-num">${on.avaccine + on.cvaccine + on.dvaccine}</div>
             <div class="data-num">${on.cumulative_avaccine + on.cumulative_cvaccine + on.cumulative_dvaccine}</div>
-
           </div>
         </div>
       </div>`,
@@ -441,11 +386,12 @@ window.onload = e => {
       }
 
       const princeEdwardIsland = {
-        HTML: `<div id="princeedwardisland" class="prov-cntr">
-        <div class="prov-img-cntr">
-          <img src="img/pei.gif" alt="Price Edward Island" class="prov-img"></img>
-        </div>
-        <div>
+        HTML: 
+        `<div id="princeedwardisland" class="prov-cntr">
+          <div class="prov-img-cntr">
+            <img src="img/pei.gif" alt="Price Edward Island" class="prov-img"></img>
+          </div>
+          <div>
           <div class="prov-header">
             <img src="img/pei-flag.png" alt="Price Edward Island flag" class="flag"></img>
             <h2 class="prov-title">Prince Edward Island</h2>
@@ -453,44 +399,37 @@ window.onload = e => {
               <div class="data-num red">${pei.active_cases} </div>active cases ${pei.date}
             </div>
           </div>
-
           <div class="prov-stats">
             <div class="grid-header daily">daily</div>
             <div class="grid-header total">total</div>
-
             <div class="data-title">Cases</div>
             <div class="data-num">${pei.cases}</div>
             <div class="data-num">${pei.cumulative_cases}</div>
-
             <div class="data-title">Recovered</div>
             <div class="data-num">${pei.recovered}</div>
             <div class="data-num">${pei.cumulative_recovered}</div>
-
             <div class="data-title">Deaths</div>
             <div class="data-num">${pei.deaths}</div>
             <div class="data-num">${pei.cumulative_deaths}</div>
-
             <div class="data-title">Testing</div>
             <div class="data-num">${pei.testing}</div>
             <div class="data-num">${pei.cumulative_testing}</div>
-
             <div class="data-title">Vaccination</div>
             <div class="data-num">${pei.avaccine + pei.cvaccine + pei.dvaccine}</div>
             <div class="data-num">${pei.cumulative_avaccine + pei.cumulative_cvaccine + pei.cumulative_dvaccine}</div>
-
           </div>
         </div>
       </div>`,
       data: pei
       }
-      
 
       const quebec = {
-        HTML: `<div id="quebec" class="prov-cntr">
-        <div class="prov-img-cntr">
-          <img src="img/quebec.gif" alt="Quebec" class="prov-img"></img>
-        </div>
-        <div>
+        HTML: 
+        `<div id="quebec" class="prov-cntr">
+          <div class="prov-img-cntr">
+            <img src="img/quebec.gif" alt="Quebec" class="prov-img"></img>
+          </div>
+          <div>
           <div class="prov-header">
             <img src="img/quebec-flag.png" alt="Quebec flag" class="flag"></img>
             <h2 class="prov-title">Quebec</h2>
@@ -498,31 +437,24 @@ window.onload = e => {
               <div class="data-num red">${qb.active_cases} </div>active cases ${qb.date}
             </div>
           </div>
-
           <div class="prov-stats">
             <div class="grid-header daily">daily</div>
             <div class="grid-header total">total</div>
-
             <div class="data-title">Cases</div>
             <div class="data-num">${qb.cases}</div>
             <div class="data-num">${qb.cumulative_cases}</div>
-
             <div class="data-title">Recovered</div>
             <div class="data-num">${qb.recovered}</div>
             <div class="data-num">${qb.cumulative_recovered}</div>
-
             <div class="data-title">Deaths</div>
             <div class="data-num">${qb.deaths}</div>
             <div class="data-num">${qb.cumulative_deaths}</div>
-
             <div class="data-title">Testing</div>
             <div class="data-num">${qb.testing}</div>
             <div class="data-num">${qb.cumulative_testing}</div>
-
             <div class="data-title">Vaccination</div>
             <div class="data-num">${qb.avaccine + qb.cvaccine + qb.dvaccine}</div>
             <div class="data-num">${qb.cumulative_avaccine + qb.cumulative_cvaccine + qb.cumulative_dvaccine}</div>
-
           </div>
         </div>
       </div>`,
@@ -530,11 +462,12 @@ window.onload = e => {
       }
 
       const saskatchewan = {
-        HTML:`<div id="saskatchewan" class="prov-cntr">
-        <div class="prov-img-cntr">
-          <img src="img/sask.gif" alt="Saskatchewan" class="prov-img"></img>
-        </div>
-        <div>
+        HTML:
+        `<div id="saskatchewan" class="prov-cntr">
+          <div class="prov-img-cntr">
+            <img src="img/sask.gif" alt="Saskatchewan" class="prov-img"></img>
+          </div>
+          <div>
           <div class="prov-header">
             <img src="img/sk-flag.png" alt="Saskatchewan flag" class="flag"></img>
             <h2 class="prov-title">Saskatchewan</h2>
@@ -542,31 +475,24 @@ window.onload = e => {
               <div class="data-num red">${sk.active_cases} </div>active cases ${sk.date}
             </div>
           </div>
-
           <div class="prov-stats">
             <div class="grid-header daily">daily</div>
             <div class="grid-header total">total</div>
-
             <div class="data-title">Cases</div>
             <div class="data-num">${sk.cases}</div>
             <div class="data-num">${sk.cumulative_cases}</div>
-
             <div class="data-title">Recovered</div>
             <div class="data-num">${sk.recovered}</div>
             <div class="data-num">${sk.cumulative_recovered}</div>
-
             <div class="data-title">Deaths</div>
             <div class="data-num">${sk.deaths}</div>
             <div class="data-num">${sk.cumulative_deaths}</div>
-
             <div class="data-title">Testing</div>
             <div class="data-num">${sk.testing}</div>
             <div class="data-num">${sk.cumulative_testing}</div>
-
             <div class="data-title">Vaccination</div>
             <div class="data-num">${sk.avaccine + sk.cvaccine + sk.dvaccine}</div>
             <div class="data-num">${sk.cumulative_avaccine + sk.cumulative_cvaccine + sk.cumulative_dvaccine}</div>
-
           </div>
         </div>
       </div>`,
@@ -574,11 +500,12 @@ window.onload = e => {
       }
 
       const yukon = {
-        HTML: `<div id="yukon" class="prov-cntr">
-        <div class="prov-img-cntr">
-          <img src="img/yk.gif" alt="Yukon" class="prov-img"></img>
-        </div>
-        <div>
+        HTML: 
+        `<div id="yukon" class="prov-cntr">
+          <div class="prov-img-cntr">
+            <img src="img/yk.gif" alt="Yukon" class="prov-img"></img>
+          </div>
+          <div>
           <div class="prov-header">
             <img src="img/yk-flag.png" alt="Yukon flag" class="flag"></img>
             <h2 class="prov-title">Yukon</h2>
@@ -586,11 +513,9 @@ window.onload = e => {
               <div class="data-num red">${yk.active_cases} </div>active cases ${yk.date}
             </div>
           </div>
-
           <div class="prov-stats">
             <div class="grid-header daily">daily</div>
             <div class="grid-header total">total</div>
-
             <div class="data-title">Cases</div>
             <div class="data-num">${yk.cases}</div>
             <div class="data-num">${yk.cumulative_cases}</div>
@@ -617,8 +542,8 @@ window.onload = e => {
       data: yk
       }
 
-      let provinces = 
-      [
+      // it is helpful to have the HTML panels in an array together for later sorting
+      const provinces = [
             alberta, 
             britishColumbia, 
             manitoba, 
@@ -638,7 +563,7 @@ window.onload = e => {
         // arrange the provence panels in alphabetical order
         // default sorting method
         // alphabetical order will never change, this can be hardcoded.
-        let alphabetical = [
+        const alphabetical = [
           alberta, 
           britishColumbia, 
           manitoba, 
@@ -759,8 +684,6 @@ window.onload = e => {
             dailyVaccinations();
             break;
         }
-
       });
-
     })
   }
