@@ -55,8 +55,9 @@ window.onload = e => {
           <div class="prov-header">
             <img src="img/ab-flag.png" alt="Alberta flag" class="flag"></img>
             <h2 class="prov-title">Alberta</h2>
+            <span class="updated">updated: ${ab.date}</span>
             <div class="active-cases">
-              <div class="data-num red">${ab.active_cases} </div>active cases ${ab.date}
+              <div class="data-num red">${ab.active_cases}</div><span>active cases</span> 
             </div>
           </div>
           <div class="prov-stats">
@@ -93,8 +94,9 @@ window.onload = e => {
           <div class="prov-header">
             <img src="img/bc-flag.png" alt="British Columbia flag" class="flag"></img>
             <h2 class="prov-title">British Columbia</h2>
+            <span class="updated">updated: ${bc.date}</span>
             <div class="active-cases">
-              <div class="data-num red">${bc.active_cases} </div>active cases ${bc.date}
+              <div class="data-num red">${bc.active_cases}</div><span>active cases</span> 
             </div>
           </div>
           <div class="prov-stats">
@@ -131,8 +133,9 @@ window.onload = e => {
           <div class="prov-header">
             <img src="img/mb-flag.png" alt="Manitoba flag" class="flag"></img>
             <h2 class="prov-title">Manitoba</h2>
+            <span class="updated">updated: ${mb.date}</span>
             <div class="active-cases">
-              <div class="data-num red">${mb.active_cases} </div>active cases ${mb.date}
+              <div class="data-num red">${mb.active_cases}</div><span>active cases</span> 
             </div>
           </div>
           <div class="prov-stats">
@@ -169,8 +172,9 @@ window.onload = e => {
           <div class="prov-header">
             <img src="img/nb-flag.png" alt="New Brunswick flag" class="flag"></img>
             <h2 class="prov-title">New Brunswick</h2>
+            <span class="updated">updated: ${nb.date}</span>
             <div class="active-cases">
-              <div class="data-num red">${nb.active_cases} </div>active cases ${nb.date}
+              <div class="data-num red">${nb.active_cases}</div><span>active cases</span> 
             </div>
           </div>
           <div class="prov-stats">
@@ -206,8 +210,9 @@ window.onload = e => {
           <div class="prov-header">
             <img src="img/nfl-flag.png" alt="Newfoundland and Labrador flag" class="flag"></img>
             <h2 class="prov-title">Newfoundland and Labrador</h2>
+            <span class="updated">updated: ${nl.date}</span>
             <div class="active-cases">
-              <div class="data-num red">${nl.active_cases} </div>active cases ${nl.date}
+              <div class="data-num red">${nl.active_cases}</div><span>active cases</span> 
             </div>
           </div>
           <div class="prov-stats">
@@ -234,7 +239,7 @@ window.onload = e => {
       data: nl
       }
 
-      const northwestTerritories = {      
+      const northwestTerritories = {
         HTML: 
         `<div id="northwestterritories" class="prov-cntr">
           <div class="prov-img-cntr">
@@ -244,8 +249,9 @@ window.onload = e => {
           <div class="prov-header">
             <img src="img/nwt-flag.png" alt="Northwest Territories flag" class="flag"></img>
             <h2 class="prov-title">Northwest Territories</h2>
+            <span class="updated">updated: ${nt.date}</span>
             <div class="active-cases">
-              <div class="data-num red">${nt.active_cases} </div>active cases ${nt.date}
+              <div class="data-num red">${nt.active_cases}</div><span>active cases</span> 
             </div>
           </div>
           <div class="prov-stats">
@@ -282,8 +288,9 @@ window.onload = e => {
           <div class="prov-header">
             <img src="img/ns-flag.png" alt="Nova Scotia flag" class="flag"></img>
             <h2 class="prov-title">Nova Scotia</h2>
+            <span class="updated">updated: ${ns.date}</span>
             <div class="active-cases">
-              <div class="data-num red">${ns.active_cases} </div>active cases ${ns.date}
+              <div class="data-num red">${ns.active_cases}</div><span>active cases</span> 
             </div>
           </div>
           <div class="prov-stats">
@@ -319,8 +326,9 @@ window.onload = e => {
           <div class="prov-header">
             <img src="img/nv-flag.png" alt="Nunavut flag" class="flag"></img>
             <h2 class="prov-title">Nunavut</h2>
+            <span class="updated">updated: ${nv.date}</span>
             <div class="active-cases">
-              <div class="data-num red">${nv.active_cases} </div>active cases ${nv.date}
+              <div class="data-num red">${nv.active_cases} </div><span>active cases</span> 
             </div>
           </div>
           <div class="prov-stats">
@@ -357,8 +365,9 @@ window.onload = e => {
           <div class="prov-header">
             <img src="img/ontario-flag.png" alt="ontario flag" class="flag"></img>
             <h2 class="prov-title">Ontario</h2>
+            <span class="updated">updated: ${on.date}</span>
             <div class="active-cases">
-              <div class="data-num red">${on.active_cases} </div>active cases ${on.date}
+              <div class="data-num red">${on.active_cases} </div><span>active cases</span> 
             </div>
           </div>
           <div class="prov-stats">
@@ -395,8 +404,9 @@ window.onload = e => {
           <div class="prov-header">
             <img src="img/pei-flag.png" alt="Price Edward Island flag" class="flag"></img>
             <h2 class="prov-title">Prince Edward Island</h2>
+            <span class="updated">updated: ${pei.date}</span>
             <div class="active-cases">
-              <div class="data-num red">${pei.active_cases} </div>active cases ${pei.date}
+              <div class="data-num red">${pei.active_cases} </div><span>active cases</span> 
             </div>
           </div>
           <div class="prov-stats">
@@ -433,8 +443,9 @@ window.onload = e => {
           <div class="prov-header">
             <img src="img/quebec-flag.png" alt="Quebec flag" class="flag"></img>
             <h2 class="prov-title">Quebec</h2>
+            <span class="updated">updated: ${qb.date}</span>
             <div class="active-cases">
-              <div class="data-num red">${qb.active_cases} </div>active cases ${qb.date}
+              <div class="data-num red">${qb.active_cases} </div><span>active cases</span> 
             </div>
           </div>
           <div class="prov-stats">
@@ -471,8 +482,9 @@ window.onload = e => {
           <div class="prov-header">
             <img src="img/sk-flag.png" alt="Saskatchewan flag" class="flag"></img>
             <h2 class="prov-title">Saskatchewan</h2>
+            <span class="updated">updated: ${sk.date}</span>
             <div class="active-cases">
-              <div class="data-num red">${sk.active_cases} </div>active cases ${sk.date}
+              <div class="data-num red">${sk.active_cases} </div><span>active cases</span> 
             </div>
           </div>
           <div class="prov-stats">
@@ -509,8 +521,9 @@ window.onload = e => {
           <div class="prov-header">
             <img src="img/yk-flag.png" alt="Yukon flag" class="flag"></img>
             <h2 class="prov-title">Yukon</h2>
+            <span class="updated">updated: ${yk.date}</span>
             <div class="active-cases">
-              <div class="data-num red">${yk.active_cases} </div>active cases ${yk.date}
+              <div class="data-num red">${yk.active_cases} </div><span>active cases</span> 
             </div>
           </div>
           <div class="prov-stats">
@@ -542,7 +555,7 @@ window.onload = e => {
       data: yk
       }
 
-      // it is helpful to have the HTML panels in an array together for later sorting
+      // it is helpful to have the HTML panels in an array together for later 
       const provinces = [
             alberta, 
             britishColumbia, 
