@@ -57,7 +57,7 @@ window.onload = e => {
             <h2 class="prov-title">Alberta</h2>
             <span class="updated">updated: ${ab.date}</span>
             <div class="active-cases">
-              <div class="data-num red">${ab.active_cases}</div><span>active cases</span> 
+              <div class="data-num ${greenIfZero(ab.active_cases)}">${ab.active_cases}</div><span>active cases</span> 
             </div>
           </div>
           <div class="prov-stats">
@@ -96,7 +96,7 @@ window.onload = e => {
             <h2 class="prov-title">British Columbia</h2>
             <span class="updated">updated: ${bc.date}</span>
             <div class="active-cases">
-              <div class="data-num red">${bc.active_cases}</div><span>active cases</span> 
+              <div class="data-num ${greenIfZero(bc.active_cases)}">${bc.active_cases}</div><span>active cases</span> 
             </div>
           </div>
           <div class="prov-stats">
@@ -135,7 +135,7 @@ window.onload = e => {
             <h2 class="prov-title">Manitoba</h2>
             <span class="updated">updated: ${mb.date}</span>
             <div class="active-cases">
-              <div class="data-num red">${mb.active_cases}</div><span>active cases</span> 
+              <div class="data-num ${greenIfZero(mb.active_cases)}">${mb.active_cases}</div><span>active cases</span> 
             </div>
           </div>
           <div class="prov-stats">
@@ -174,7 +174,7 @@ window.onload = e => {
             <h2 class="prov-title">New Brunswick</h2>
             <span class="updated">updated: ${nb.date}</span>
             <div class="active-cases">
-              <div class="data-num red">${nb.active_cases}</div><span>active cases</span> 
+              <div class="data-num ${greenIfZero(nb.active_cases)}">${nb.active_cases}</div><span>active cases</span> 
             </div>
           </div>
           <div class="prov-stats">
@@ -212,7 +212,7 @@ window.onload = e => {
             <h2 class="prov-title">Newfoundland and Labrador</h2>
             <span class="updated">updated: ${nl.date}</span>
             <div class="active-cases">
-              <div class="data-num red">${nl.active_cases}</div><span>active cases</span> 
+              <div class="data-num ${greenIfZero(nl.active_cases)}">${nl.active_cases}</div><span>active cases</span> 
             </div>
           </div>
           <div class="prov-stats">
@@ -251,7 +251,7 @@ window.onload = e => {
             <h2 class="prov-title">Northwest Territories</h2>
             <span class="updated">updated: ${nt.date}</span>
             <div class="active-cases">
-              <div class="data-num red">${nt.active_cases}</div><span>active cases</span> 
+              <div class="data-num ${greenIfZero(nt.active_cases)}">${nt.active_cases}</div><span>active cases</span> 
             </div>
           </div>
           <div class="prov-stats">
@@ -290,7 +290,7 @@ window.onload = e => {
             <h2 class="prov-title">Nova Scotia</h2>
             <span class="updated">updated: ${ns.date}</span>
             <div class="active-cases">
-              <div class="data-num red">${ns.active_cases}</div><span>active cases</span> 
+              <div class="data-num ${greenIfZero(ns.active_cases)}">${ns.active_cases}</div><span>active cases</span> 
             </div>
           </div>
           <div class="prov-stats">
@@ -328,7 +328,7 @@ window.onload = e => {
             <h2 class="prov-title">Nunavut</h2>
             <span class="updated">updated: ${nv.date}</span>
             <div class="active-cases">
-              <div class="data-num red">${nv.active_cases} </div><span>active cases</span> 
+              <div class="data-num ${greenIfZero(nv.active_cases)}">${nv.active_cases} </div><span>active cases</span> 
             </div>
           </div>
           <div class="prov-stats">
@@ -367,7 +367,7 @@ window.onload = e => {
             <h2 class="prov-title">Ontario</h2>
             <span class="updated">updated: ${on.date}</span>
             <div class="active-cases">
-              <div class="data-num red">${on.active_cases} </div><span>active cases</span> 
+              <div class="data-num ${greenIfZero(on.active_cases)}">${on.active_cases} </div><span>active cases</span> 
             </div>
           </div>
           <div class="prov-stats">
@@ -406,7 +406,7 @@ window.onload = e => {
             <h2 class="prov-title">Prince Edward Island</h2>
             <span class="updated">updated: ${pei.date}</span>
             <div class="active-cases">
-              <div class="data-num red">${pei.active_cases} </div><span>active cases</span> 
+              <div class="data-num ${greenIfZero(pei.active_cases)}">${pei.active_cases} </div><span>active cases</span> 
             </div>
           </div>
           <div class="prov-stats">
@@ -445,7 +445,7 @@ window.onload = e => {
             <h2 class="prov-title">Quebec</h2>
             <span class="updated">updated: ${qb.date}</span>
             <div class="active-cases">
-              <div class="data-num red">${qb.active_cases} </div><span>active cases</span> 
+              <div class="data-num ${greenIfZero(qb.active_cases)}">${qb.active_cases} </div><span>active cases</span> 
             </div>
           </div>
           <div class="prov-stats">
@@ -484,7 +484,7 @@ window.onload = e => {
             <h2 class="prov-title">Saskatchewan</h2>
             <span class="updated">updated: ${sk.date}</span>
             <div class="active-cases">
-              <div class="data-num red">${sk.active_cases} </div><span>active cases</span> 
+              <div class="data-num ${greenIfZero(sk.active_cases)}">${sk.active_cases} </div><span>active cases</span> 
             </div>
           </div>
           <div class="prov-stats">
@@ -523,7 +523,7 @@ window.onload = e => {
             <h2 class="prov-title">Yukon</h2>
             <span class="updated">updated: ${yk.date}</span>
             <div class="active-cases">
-              <div class="data-num red">${yk.active_cases} </div><span>active cases</span> 
+              <div class="data-num ${greenIfZero(yk.active_cases)}">${yk.active_cases} </div><span>active cases</span> 
             </div>
           </div>
           <div class="prov-stats">
@@ -570,7 +570,10 @@ window.onload = e => {
             quebec,
             saskatchewan,
             yukon
-      ];
+        ];
+
+      // helps to turn the colour of active cases to green if there are 0
+      function greenIfZero(num){ return num === 0 ? "green" : "red" }
 
       function alphaSort(){
         // arrange the provence panels in alphabetical order

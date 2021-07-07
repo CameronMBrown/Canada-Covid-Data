@@ -140,3 +140,10 @@ h2, h3 {
   color: red;
   margin: 0 1vw 0 0;
 }
+
+.green {
+  font-size: 5vh;
+  font-weight: bold;
+  color: green;
+  margin: 0 1vw 0 0;
+}
