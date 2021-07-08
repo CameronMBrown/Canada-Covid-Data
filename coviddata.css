@@ -105,6 +105,8 @@ h2, h3 {
 }
 
 .grid-header {
+  position: relative;
+  top: 25%;
   text-align: end;
   margin: 0 1vw 0 1vw
 }
@@ -118,11 +120,15 @@ h2, h3 {
 }
 
 .data-title{
+  position: relative;
+  top: 25%;
   font-size: 25px;
   margin-right: 3vw;
 }
 
 .data-num{
+  position: relative;
+  top: 25%;
   font-family: "Andalé Mono";
   margin: 0 1vw 0 1vw;
   display: inline;
